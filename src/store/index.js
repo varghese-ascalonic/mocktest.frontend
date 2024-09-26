@@ -27,7 +27,7 @@ const store = createStore({
 
             // Make API call to "/start-generating" endpoint
             try {
-                const response = await axios.get(`https://localhost:32771/Questions/start-generating`, { params: { topic } });
+                const response = await axios.get(`https://mocktest-f4d6bvdbahcmfmff.westeurope-01.azurewebsites.net/Questions/start-generating`, { params: { topic } });
                 const question = response.data; // Assuming the API returns a single question object
 
                 // Add the question to the state
@@ -40,7 +40,7 @@ const store = createStore({
         async continueGenerating({ state, commit }) {
             // Make API call to "/continue-generating" endpoint
             try {
-                const response = await axios.post(`https://localhost:32771/Questions/continue-generating`, {
+                const response = await axios.post(`https://mocktest-f4d6bvdbahcmfmff.westeurope-01.azurewebsites.net/Questions/continue-generating`, {
                     topic: state.topic,
                     previousQuestions: state.questions,
                 });
